@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta chharset = "UTF-8">
+        <meta http-equiv="X-UA-compatible" content="IE=edge">
+        <meta name=""viewport content="width=device-width, internal-scale=1.0">
+        <title>home page</title>
+    </head>
+    <body>
+        <div class ="container" style="text-align:center"
+
+            {% include 'navbar.html' %}
+            <h1> this is our official website</h1>
+            <form action ="/home/" method="POST">
+            {% csrf_token %}
+            <input type ="text" name ="check">
+            <button> send </button>
+
+            </form>
+            <h1> Todays date is {{name}}</h1>
+            <hr>
+            <h2> studenr name :{{student_data.student_name}}</h2>
+            <h2> studenr college :{{student_data.student_college}}</h2>
+            <h2> studenr city :{{student_data.student_city}}</h2>
+            <hr>
+            <h1> favorite programs</h1>
+            {% for p in list_of_programs %}
+            <h3>{{p}}</h3>
+            {% endfor %}
+        </div>          
+                
+    </body>
+</html>
